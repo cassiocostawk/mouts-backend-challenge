@@ -3,7 +3,7 @@
     /// <summary>
     /// API response model for retrieving sales
     /// </summary>
-    public class GetSalesResponse
+    public class ListSalesResponse
     {
         /// <summary>
         /// The unique identifier of the sale

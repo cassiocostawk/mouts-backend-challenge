@@ -37,6 +37,6 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
         /// <summary>
         /// Gets or sets the list of items associated with this sale.
         /// </summary>
-        public List<SaleItemRequest> Items { get; set; } = [];
+        public List<CreateSaleItemRequest> Items { get; set; } = [];
     }
 }

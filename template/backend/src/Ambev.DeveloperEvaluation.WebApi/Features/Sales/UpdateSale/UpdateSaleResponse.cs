@@ -8,6 +8,11 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSale
     public class UpdateSaleResponse
     {
         /// <summary>
+        /// The unique identifier of the sale item.
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
         /// The unique sale number for this transaction.
         /// </summary>
         public required string SaleNumber { get; set; }

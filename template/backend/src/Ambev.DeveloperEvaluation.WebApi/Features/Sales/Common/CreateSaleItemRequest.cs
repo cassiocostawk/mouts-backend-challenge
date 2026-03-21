@@ -1,15 +1,10 @@
 ﻿namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.Common
 {
     /// <summary>
-    /// Request model for SaleItem, used in creating or updating Sale in the API.
+    /// Request model for creating a SaleItem in the API.
     /// </summary>
-    public class SaleItemRequest
+    public class CreateSaleItemRequest
     {
-        /// <summary>
-        /// The unique identifier of the sale associated with this item.
-        /// </summary>
-        public Guid SaleId { get; set; }
-
         /// <summary>
         /// The quantity of the item in the sale.
         /// </summary>

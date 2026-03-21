@@ -5,7 +5,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.ListSales
     /// <summary>
     /// Request model for getting sales.
     /// </summary>
-    public class GetSalesRequest : PaginatedRequest
+    public class ListSalesRequest : PaginatedRequest
     {
         /// <summary>
         /// The sale number to filter by. (optional)

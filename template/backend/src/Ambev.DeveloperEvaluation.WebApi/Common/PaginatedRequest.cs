@@ -1,5 +1,8 @@
 ﻿namespace Ambev.DeveloperEvaluation.WebApi.Common
 {
+    /// <summary>
+    /// DTO for paginated requests, used to capture pagination parameters such as page number and page size.
+    /// </summary>
     public class PaginatedRequest
     {
         /// <summary>

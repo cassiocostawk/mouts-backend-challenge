@@ -37,6 +37,6 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.UpdateSale
         /// <summary>
         /// Gets or sets the list of items associated with this sale.
         /// </summary>
-        public List<SaleItemRequest> Items { get; set; } = [];
+        public List<UpdateSaleItemRequest> Items { get; set; } = [];
     }
 }
