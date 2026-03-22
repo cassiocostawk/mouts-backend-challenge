@@ -13,8 +13,8 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetSale
         /// </summary>
         public GetSaleProfile()
         {
-            CreateMap<Guid, GetSaleCommand>()
-                .ConstructUsing(id => new GetSaleCommand(id));
+            CreateMap<GetSaleRequest, GetSaleCommand>();
+            CreateMap<GetSaleResult, GetSaleResponse>();
         }
     }
 }
