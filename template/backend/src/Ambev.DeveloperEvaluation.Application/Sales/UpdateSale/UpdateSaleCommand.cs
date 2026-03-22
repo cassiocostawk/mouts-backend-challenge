@@ -36,11 +36,6 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         public DateTime SaleDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the total amount of the sale.
-        /// </summary>
-        public decimal TotalAmount { get; set; }
-
-        /// <summary>
         /// CustomerId represents the unique identifier of the customer associated with this sale.
         /// int based on External Identity and docs
         /// </summary>

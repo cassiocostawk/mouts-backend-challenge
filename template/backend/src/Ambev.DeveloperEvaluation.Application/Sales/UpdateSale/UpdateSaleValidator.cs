@@ -16,7 +16,6 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
         /// - Sale ID must not be empty.
         /// - Sale number must not be empty and have a length between 1 and 20.
         /// - Sale date must be less than or equal to the current date and time.
-        /// - Total amount must be greater than 0.
         /// - Customer ID must be greater than 0.
         /// - Branch ID must be greater than 0.
         /// - Each sale item must pass the UpdateSaleItemValidator rules.
@@ -29,7 +28,6 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
 
             RuleFor(sale => sale.SaleNumber).NotEmpty().Length(1, 20);
             RuleFor(sale => sale.SaleDate).LessThanOrEqualTo(DateTime.UtcNow);
-            RuleFor(sale => sale.TotalAmount).GreaterThan(0);
             RuleFor(sale => sale.CustomerId).GreaterThan(0);
             RuleFor(sale => sale.BranchId).GreaterThan(0);
             RuleForEach(sale => sale.Items).SetValidator(new UpdateSaleItemValidator());

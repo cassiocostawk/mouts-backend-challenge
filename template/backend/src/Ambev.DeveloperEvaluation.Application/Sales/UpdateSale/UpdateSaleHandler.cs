@@ -46,6 +46,24 @@ namespace Ambev.DeveloperEvaluation.Application.Sales.UpdateSale
 
             var updatedSale = _mapper.Map(request, saleDB);
 
+            foreach (var item in updatedSale.Items)
+            {
+                if (item.Quantity > 20)
+                    throw new InvalidOperationException("Cannot sell more than 20 identical items.");
+
+                decimal discount = 0;
+                if (item.Quantity >= 10 && item.Quantity <= 20)
+                    discount = 0.20m;
+                else if (item.Quantity >= 4)
+                    discount = 0.10m;
+
+                var totalWithoutDiscount = item.UnitPrice * item.Quantity;
+                item.Discount = discount > 0 ? totalWithoutDiscount * discount : 0;
+                item.TotalAmount = totalWithoutDiscount - item.Discount;
+            }
+
+            updatedSale.TotalAmount = updatedSale.Items.Sum(i => i.TotalAmount);
+
             // Remove items that are not in the request
             var itemsToRemove = updatedSale.Items.Where(i => !request.Items.Any(ri => ri.Id == i.Id)).ToList();
             foreach (var item in itemsToRemove)
