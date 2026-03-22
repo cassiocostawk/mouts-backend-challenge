@@ -10,6 +10,11 @@ public class DefaultContext : DbContext
 {
     public DbSet<User> Users { get; set; }
 
+    #region Sales Domain
+    public DbSet<Sale> Sales { get; set; }
+    public DbSet<SaleItem> SaleItems { get; set; }
+    #endregion
+
     public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
     {
     }
